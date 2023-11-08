@@ -1,50 +1,77 @@
 <?php
 
-/*
-Tipos de datos
-En programación tenemos varios tipos de datos, los más conocidos son:
+//recuerda que casting sirve para forzar a convertir de un tipo de dato a otro
 
-    Numéricos:
-        Integer: Número sin decimales.
-        Float: Número con punto flotante o punto decimal.
-        Double: Decimales con valores más precisos, con más decimales que float.
-    Cadenas ded caracteres:
-        Chart: Un solo una letra o un simbolo.
-        String: Una cadena de caracteres.
-    Booleanos:
-        Bool: Verdadero o falso.
-    Sin valor:
-        Null: No hay valor.
-        Undefined: Hay una variable pero no tiene ningun valor.
-PHP tiene un tipado débil, no necesita que se defina de forma explicita el tipo de dato ya que lo deduce por si mismo.
+$numerito = "5";
 
-PHP es capaz de convertir de un tipo a otro de forma automática. Por ejemplo si sumas un número con un string PHP evaluará ambos como números.
-
-
-*/
-
-$numerito = 874541362;
 var_dump($numerito);
-echo "\n";
 
-$numerito = "23";
+$numerito = (int) $numerito;
+
 var_dump($numerito);
+
+$dias = 5.89;
+
+var_dump($dias);
+
+$dias = (int) $dias;
+
+var_dump($dias);
+
+$banderita = 1;
+
+var_dump($banderita);
+
+$banderita = (bool) $banderita; //cualquier cosa que sea vacia o 0 lo dejara como false si no lo dejara como true
+
+var_dump($banderita);
+
+
+//ejercicio
+//Fácil
+
+$nombre = "Carlos"; //string
+var_dump($nombre);
 echo "\n";
 
-$numerito = $numerito + 2;
-var_dump($numerito);
+$apellido = "Gómez"; //string
+var_dump($apellido);
 echo "\n";
 
-$numerito = $numerito + 0.3;
-var_dump($numerito);
+$edad = 18;//int
+var_dump($edad);
 echo "\n";
 
-$nuevo_numerito = "23";
-$numerito = $nuevo_numerito + 2;
-var_dump($nuevo_numerito);
+$aprobado = true;// bool
+var_dump($aprobado);
 echo "\n";
 
+//Medio
+$promedio = (8 + 9.5 + 9 + 10 + 8) / 5; // float
+var_dump($promedio);
+echo "\n";
 
-$papas = "10 papas en el costal";
-$cuantas_papas_hay = $papas + 5;
-echo $cuantas_papas_hay; // php hara esta suma pero dara un warning por que esto no esta bien ya que es un string sumandose con un numeric
+$nombre_completo = $nombre . " " . $apellido; // string
+var_dump($nombre_completo);
+echo "\n";
+
+$presento_examen = (bool) 1; // booleano
+var_dump($presento_examen);
+echo "\n";
+
+//Avanzado
+$numero_preguntas = 5 + "5"; //int
+var_dump($numero_preguntas);
+echo "\n";
+
+$numero_respuestas = "5" + 5; //int
+var_dump($numero_respuestas);
+echo "\n";
+
+$promedio_maximo = $numero_respuestas / 1.0; //float
+var_dump($promedio_maximo);
+echo "\n";
+
+$michis = 3 + "5 michis"; //int
+var_dump($michis);
+echo "\n";
