@@ -1,77 +1,38 @@
 <?php
 
-//recuerda que casting sirve para forzar a convertir de un tipo de dato a otro
+$michis_felinos = true;
+$michis_4_patas = true;
+$michis_vuelan = false;
+$michis_porgraman_con_php = false;
 
-$numerito = "5";
-
-var_dump($numerito);
-
-$numerito = (int) $numerito;
-
-var_dump($numerito);
-
-$dias = 5.89;
-
-var_dump($dias);
-
-$dias = (int) $dias;
-
-var_dump($dias);
-
-$banderita = 1;
-
-var_dump($banderita);
-
-$banderita = (bool) $banderita; //cualquier cosa que sea vacia o 0 lo dejara como false si no lo dejara como true
-
-var_dump($banderita);
-
-
-//ejercicio
-//Fácil
-
-$nombre = "Carlos"; //string
-var_dump($nombre);
+//And
+var_dump($michis_felinos && $michis_4_patas);
 echo "\n";
 
-$apellido = "Gómez"; //string
-var_dump($apellido);
+//Or
+var_dump($michis_4_patas || $michis_vuelan);
 echo "\n";
 
-$edad = 18;//int
-var_dump($edad);
+//Not
+var_dump(!$michis_4_patas);
 echo "\n";
 
-$aprobado = true;// bool
-var_dump($aprobado);
+// Experimentos que te va a hacer decir waaaaaaaaaaaaat
+$resultado = $michis_4_patas and $michis_porgraman_con_php; // hay una diferencia entre el and de palabras y el and conj simbolo && que vamos a ver en la siguiente clase
+var_dump($resultado);
+
 echo "\n";
 
-//Medio
-$promedio = (8 + 9.5 + 9 + 10 + 8) / 5; // float
-var_dump($promedio);
-echo "\n";
+//reto
+// Suponiendo estas variables
+$es_un_gato_grande = true;
+$le_gusta_comer = true;
+$sabe_volar = false;
+$tiene_2_patas = false;
 
-$nombre_completo = $nombre . " " . $apellido; // string
-var_dump($nombre_completo);
-echo "\n";
-
-$presento_examen = (bool) 1; // booleano
-var_dump($presento_examen);
-echo "\n";
-
-//Avanzado
-$numero_preguntas = 5 + "5"; //int
-var_dump($numero_preguntas);
-echo "\n";
-
-$numero_respuestas = "5" + 5; //int
-var_dump($numero_respuestas);
-echo "\n";
-
-$promedio_maximo = $numero_respuestas / 1.0; //float
-var_dump($promedio_maximo);
-echo "\n";
-
-$michis = 3 + "5 michis"; //int
-var_dump($michis);
-echo "\n";
+// ¿Cuál es el resultado?
+$es_un_gato_grande && $le_gusta_comer; //true
+$es_un_gato_grande || $sabe_volar; //true
+$sabe_volar || $tiene_2_patas; //false
+!$le_gusta_comer; //false
+!$le_gusta_comer || $es_un_gato_grande; //true
