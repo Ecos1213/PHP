@@ -1,30 +1,20 @@
 <?php
 
-$personas = [
-    "Carlos" => 22,
-    "Mr. michi" => 15,
-    "Juan" => 65
-];
+$numero_1 = 8;
+$numero_2 = 7;
 
+$nombre = "carlos";
 
-/*La función var_dump() en PHP se utiliza para mostrar información sobre una o más variables, incluyendo su tipo de dato y su contenido. 
-Su principal propósito es la depuración y el diagnóstico de variables y estructuras de datos en tus programas PHP */
-
-var_dump($personas);
+define("NUMERO_PI", 3.14); // asi se definen variables constantes en php, usando el metodo define y lleva dos parametros el primero es el nombre de la variable y el segundo seria su valor
+//define("NUMERO_PI", 14); // esto dara un warning por que las constantes no se pueden cambiar su valor
+//NUMERO_PI = 14; // esto da error por lo mismo no se puede cambiar valores de constantes de ninguna manera
+echo $numero_1 + $numero_2;
+echo "\n";
+echo $nombre;
+echo "\n";
+echo NUMERO_PI; // para llamar una constante simplemente colocamos sin llave el nombre del primer parametro que definimos anteriormente
 echo "\n";
 
-/*La función print_r() en PHP se utiliza para mostrar información sobre una variable o estructura de datos de una manera más legible que var_dump(). 
-A diferencia de var_dump(), print_r() no muestra el tipo de dato ni la longitud de las cadenas, lo que la hace más adecuada para la visualización de 
-datos en un formato más humano. */
-print_r($personas);
-echo "\n";
-
-//esto es un comentario
-
-#esto es tambien un comentario
-
-/*tambie es un comentario 
-de multiples lineas */
 
 
 
