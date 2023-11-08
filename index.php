@@ -1,20 +1,50 @@
 <?php
 
-$numero_1 = 8;
-$numero_2 = 7;
+/*
+Tipos de datos
+En programación tenemos varios tipos de datos, los más conocidos son:
 
-$nombre = "carlos";
+    Numéricos:
+        Integer: Número sin decimales.
+        Float: Número con punto flotante o punto decimal.
+        Double: Decimales con valores más precisos, con más decimales que float.
+    Cadenas ded caracteres:
+        Chart: Un solo una letra o un simbolo.
+        String: Una cadena de caracteres.
+    Booleanos:
+        Bool: Verdadero o falso.
+    Sin valor:
+        Null: No hay valor.
+        Undefined: Hay una variable pero no tiene ningun valor.
+PHP tiene un tipado débil, no necesita que se defina de forma explicita el tipo de dato ya que lo deduce por si mismo.
 
-define("NUMERO_PI", 3.14); // asi se definen variables constantes en php, usando el metodo define y lleva dos parametros el primero es el nombre de la variable y el segundo seria su valor
-//define("NUMERO_PI", 14); // esto dara un warning por que las constantes no se pueden cambiar su valor
-//NUMERO_PI = 14; // esto da error por lo mismo no se puede cambiar valores de constantes de ninguna manera
-echo $numero_1 + $numero_2;
+PHP es capaz de convertir de un tipo a otro de forma automática. Por ejemplo si sumas un número con un string PHP evaluará ambos como números.
+
+
+*/
+
+$numerito = 874541362;
+var_dump($numerito);
 echo "\n";
-echo $nombre;
+
+$numerito = "23";
+var_dump($numerito);
 echo "\n";
-echo NUMERO_PI; // para llamar una constante simplemente colocamos sin llave el nombre del primer parametro que definimos anteriormente
+
+$numerito = $numerito + 2;
+var_dump($numerito);
+echo "\n";
+
+$numerito = $numerito + 0.3;
+var_dump($numerito);
+echo "\n";
+
+$nuevo_numerito = "23";
+$numerito = $nuevo_numerito + 2;
+var_dump($nuevo_numerito);
 echo "\n";
 
 
-
-
+$papas = "10 papas en el costal";
+$cuantas_papas_hay = $papas + 5;
+echo $cuantas_papas_hay; // php hara esta suma pero dara un warning por que esto no esta bien ya que es un string sumandose con un numeric
