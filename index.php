@@ -1,38 +1,34 @@
 <?php
 
-$michis_felinos = true;
-$michis_4_patas = true;
-$michis_vuelan = false;
-$michis_porgraman_con_php = false;
+/*
+Operadores Aritméticos
+Adición ⇒ +
+Sustracción ⇒ -
+Multiplicación ⇒ *
+División ⇒ /
+Modulo ⇒ % ⇒ Se usa para conocer el residuo de una división ⇒ $a % $b
+Potenciación ⇒ ** ⇒ $a ** $b
+Identidad ⇒ Sirve para convertir un string a un int o float, según sea el caso ⇒ + ⇒ +$a
+Negación ⇒ Convierte un numero positivo a negativo ⇒ -$a
 
-//And
-var_dump($michis_felinos && $michis_4_patas);
-echo "\n";
+*/
 
-//Or
-var_dump($michis_4_patas || $michis_vuelan);
-echo "\n";
-
-//Not
-var_dump(!$michis_4_patas);
-echo "\n";
-
-// Experimentos que te va a hacer decir waaaaaaaaaaaaat
-$resultado = $michis_4_patas and $michis_porgraman_con_php; // hay una diferencia entre el and de palabras y el and conj simbolo && que vamos a ver en la siguiente clase
-var_dump($resultado);
+echo 5 + 5;
 
 echo "\n";
 
-//reto
-// Suponiendo estas variables
-$es_un_gato_grande = true;
-$le_gusta_comer = true;
-$sabe_volar = false;
-$tiene_2_patas = false;
+$resultado = 5 - 3;
+echo "este es el resultado: $resultado \n";
 
-// ¿Cuál es el resultado?
-$es_un_gato_grande && $le_gusta_comer; //true
-$es_un_gato_grande || $sabe_volar; //true
-$sabe_volar || $tiene_2_patas; //false
-!$le_gusta_comer; //false
-!$le_gusta_comer || $es_un_gato_grande; //true
+$resultado = 5 ** 3; // 5 elevado a la 3 = 5 x 5 x 5
+echo $resultado . "\n";
+
+$horasTotales = 7201;
+
+echo "$horasTotales segundo convertidos a horas son ". ($horasTotales/3600) .  " \n";
+echo "Sobran " . ($horasTotales % 3600). " segundos. \n";
+
+echo (5*6) . " " . (80 / 4). "\n";
+
+echo (5 / 2) . "\n";
+echo (5 % 2 ) . "\n";
