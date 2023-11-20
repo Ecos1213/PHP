@@ -1,78 +1,42 @@
 <?php
 
-$a = 5;
-$b = 5;
-$b2 = "5";
-$c = 9;
-$d = 2;
+// Operador de asignacion
+$edad_de_jaimito = ($edad_de_pepito = 18) + 5; //en asignacion de una variable tambien podemos hacer que otra variable se asigne un valor (para que esto funcione tenemos que colocar dentro de parentesis definir la variable y fuera la operacion aritmetica, php primero resolvera lo que esta en parentesis y despues hara la operacion aritmetica) y despues sumar ese valor con una constante 
 
-// == igualdad, este operador no compara tipos
-echo "\nIgualdad, este operador no compara tipos \n";
-var_dump( $a == $b );
-var_dump( $a == $b2 );
-echo "\nIdentico, compara tipos \n";
+echo "La edad de pepito es $edad_de_pepito \n";
+echo "La edad de jaimito es $edad_de_jaimito";
 
-// === identico, compara tipos
-var_dump( $a === $b  );
-var_dump( $a === $b2 );
-echo "\nDiferente , este operador no compara tipos \n";
-
-// != Diferente, este operador no compara tipos
-var_dump( $a != $b  );
-var_dump( $a != $b2 );
-echo "\nDiferente, compara tipos \n";
-
-// !== Diferente, compara tipos
-var_dump( $a !== $b  );
-var_dump( $a !== $b2 );
-echo "\n< Menor que \n";
-
-// < Menor que 
-var_dump( $a < $b  );
-var_dump( $c < $b2 );
-var_dump( $d < $b  );
-echo "\n> Mayor que \n";
-
-// > Mayor que
-var_dump( $a > $b  );
-var_dump( $c > $b2 );
-var_dump( $d > $b  );
-echo "\n>= Mayor o igual que \n";
-
-// >= Mayor o igual que
-var_dump( $a >= $b  );
-var_dump( $c >= $b2 );
-var_dump( $d >= $b  );
-echo "\n<= Menor o igual que \n";
-
-// <= Menor o igual que
-var_dump( $a <= $b  );
-var_dump( $c <= $b2 );
-var_dump( $d <= $b  );
 echo "\n";
 
-//<=> El operador de nave espacial
+$contador = 1;
+$contador += 1; //$contador = $contador + 1;
+echo $contador;
 
-/*
-    En PHP, el operador de nave espacial (<=>) se utiliza para comparar dos expresiones. Este operador devuelve
-    un valor entero negativo si la expresión de la izquierda es menor que la expresión de la derecha, 
-    cero si son iguales y un valor entero positivo si la expresión de la izquierda es mayor que la expresión de la derecha.
-*/
-
-echo 2 <=> 1; // 1, porque es mayor el de la izquierda
 echo "\n";
+$contador++; // incremento en 1 en 1
+echo $contador;
 
-echo 1 <=> 1; // 0, porque son iguales
 echo "\n";
+$contador -= 1;
+echo $contador;
 
-echo 1 <=> 2; // -1, porque es menor el de la izquierda
 echo "\n";
+$contador *= 2;
+echo $contador;
 
-//?? Fusion de null
-$edad_de_pepito = 23;
+echo "\n";
+$contador--;
+echo $contador;
 
-/*
-    El operador de fusión null (??) en PHP se utiliza para proporcionar un valor de respaldo en caso de que el primer operando sea null. 
-    Si el primer operando no es null, el operador de fusión null devuelve ese valor.
-*/
-echo $edad_de_juianito ?? $edad_de_pepito ?? $edad_de_jaimito; // incluso se puede colocar varios oepradroes y tomara el primero que tenga un valor
+echo "\n";
+$contador /= 2;
+echo $contador;
+
+echo "\n";
+$nombre = "Carlos";
+$nombre .= " Santana"; // $nombre = $nombre . " " . "Santana";
+echo $nombre;
+
+$contador = 1;
+$resultado = ++$contador; // como en java tambien pasa que depende de la posicion del operador ++ si esta en la izquierda primero hace la suma y despues asigna el valor a la variable si esta a la derecha primero hace la asignacion a la variable y despues la suma, esto se le llama Precedencia de operadores
+echo $resultado;
