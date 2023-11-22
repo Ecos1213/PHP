@@ -1,32 +1,17 @@
 <?php
-/*
-la precedencia de operadores depende de la asociatividad quiere decir como toma el lenguaje las operaciones 
-en ciertas situaciones tomara primero de izquierda a derecha y otras vez lo contrario aca podemos ver la asociatividad por completo
-https://www.php.net/manual/es/language.operators.precedence.php
-*/
-$contador = 1;
-$resultado = $contador++;
 
-echo $resultado;
 
-echo "\n";
+$segundos = readline("Ingresda el tiempo en segundos: "); // el metodo readline nos permite pedir un valor a un usuario por consola, este retornara el valor y podemos agregarlo directamente a una variable, lleva como parametro el mensaje que aparecera en consola
 
-echo 1 - 2 - 3; // como la resta suma y multipliocacion es de izquierda a derecha por tanto primero hara la resta de 1 - 2 y el resultado lo restara con - 3 
-echo "\n";
-// asociatividad de derecha a izqueirda
-//$b = 5;
-$c = 10;
+$horas = (int)($segundos / 3600);
 
-$a = $b = $c; // la asignacion o signos de = y si semejantes como += tiene una asociatividad de derecha osea que primero b va a igualar lo que tiene c y su resultado se igualara a a
+$segundos = (int)($segundos % 3600);
 
-echo $a;
-echo "\n";
+$minutos = (int)($segundos / 60);
 
-$michis_4_patas = true;
-$michis_programan_con_PHP = false;
+$segundos = (int)($segundos % 60);
 
-$resultado = $michis_4_patas and $michis_programan_con_PHP; // esto da true por que primero esta generandose la asignacion y despues el operador logico and por eso da true
-// si queremos primero que haga el operador logico podemos colocarlo dentro de un parentesis para que la precedencia de operadores primero tome el operador logico
-var_dump($resultado); //true
+echo "Son $horas horas, $minutos minutos y $segundos segundos";
 
 echo "\n";
+
