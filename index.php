@@ -1,17 +1,16 @@
 <?php
 
 
-$segundos = readline("Ingresda el tiempo en segundos: "); // el metodo readline nos permite pedir un valor a un usuario por consola, este retornara el valor y podemos agregarlo directamente a una variable, lleva como parametro el mensaje que aparecera en consola
+$horas = readline("Ingresa Horas: "); 
 
-$horas = (int)($segundos / 3600);
+$minutos = readline("Ingresa Minutos: "); 
 
-$segundos = (int)($segundos % 3600);
+$segundos = readline("Ingresa segundos: "); 
 
-$minutos = (int)($segundos / 60);
+$segundos += $horas * 3600;
 
-$segundos = (int)($segundos % 60);
+$segundos += $minutos * 60;
 
-echo "Son $horas horas, $minutos minutos y $segundos segundos";
+echo "el tiempo asignado en segundos es de $segundos";
 
 echo "\n";
-
