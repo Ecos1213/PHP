@@ -1,52 +1,32 @@
 <?php
+// aca estan todas las funciones que maneja un array https://www.php.net/manual/es/ref.array.php ya que solo veremos algunas 
+$edades = [18, 22, 40, 34];
 
-//Array asociativos es un array con llaves y se pueden colocar los arrays asociativos de dos siguientes maneras
-//$edades = ["carlos" => 20, "mr.michi" => 18, "juan" => 40];
-$edades = array(
-    "carlos" => 20, 
-    "mr.michi" => 18, 
-    "juan" => 40, // la coma al final del array es completamente opcional y no dara error a esto se le llama Trailing commas, esto se debe a que si copias y pegas con la coma php te facilita la vida
+// count
+echo count($edades) . "\n"; // cuenta cuantos elementos hay un arreglo, lleva como parametro el array
 
-);
-
-echo "La edad de Mr-Michi es " . $edades["mr.michi"];
-
+// array_push 
+array_push($edades, 13); // agrega un valor al final del array, el primer parametro es el arreglo y el segundo es el valor que agregara al final del array
+var_dump($edades);
 echo "\n";
 
-$cafes = [
+// is_array
+$esto_no_es_un_arreglo = "";
 
-    "capuccino" => 50, 
-    "latte" => 49, 
-    "americano" => 70,
-
-];
-
-echo "El precio del cafe americano es de {$cafes['americano']}"; // si queremos ejecutar una variable de tipo array tenemos que encerrarla en {} si no nos dara un error, esto solo funciona con variables de tipos mas simples desde int a strings
+var_dump(is_array($esto_no_es_un_arreglo));// define o para ver si alguna variable o cualquier cosa es un arreglo, true si es un arreglo, false si no lo es
 echo "\n";
 
-// podemos tambien dentro de un array con llaves asignarles un array y ese array colocarle diferentes valores incluso podemocs colocar un array dentro de un array deontro de un array asi sucesivamente
-$personas = array(
-    "carlos" => array(
-        "edad" => 20,
-        "apellido" => "Santana"
-    ),
-    "mr.michi" => array(
-        "edad" => 18,
-        "apellido" => "Michisiancio"
-    )
-);
-
-echo "La informacion de Mr. Michi es: Edad: " .  $personas["mr.michi"]["edad"] .  " Apellido: " . $personas["mr.michi"]["apellido"]; // esto funciona como una matriz asociativa osea que para llamarlo tenemos en este caso usar dos veces [] con sus claves correspondientes
+var_dump(is_array($edades));
 echo "\n";
 
-$personas = array(
-    "carlos" => array(
-        "edad" => 20,
-        "apellido" => array(
-            "primerApellido" => "tomatico",
-            "segundoApellido" => "perea"
-        )
-    )
-);
+// explode
+$lista_de_frutas = "fresa,cereza,manzana";
+$lista_de_frutas_array = explode(",", $lista_de_frutas);// explode divide un string segun el argumento por cual dividiremos y este resultado lo convierte en un array, el primer argumento seria el separador el cual dividira el metodo y el segundo el string
+var_dump($lista_de_frutas_array);
+echo "\n";
 
-echo "La informacion de carlos es: Edad: " .  $personas["carlos"]["edad"] . " sus apellidos son: " . $personas["carlos"]["apellido"]["primerApellido"] . " " . $personas["carlos"]["apellido"]["segundoApellido"];
+// implode
+$lista_de_frutas_array = ["fresa", "cereza", "manzana"];
+$lista_de_frutas = implode(",",$lista_de_frutas_array); // implode lo que hace es convertir el array en un string si queremos podemos colocar una concatenacion, el primer parametro sera la concatenacion que queramos colocarle al string y el segundo seria el array (el string quedaria asi con la concatenacion "fresa,cereza,manzana")
+var_dump($lista_de_frutas);
+echo "\n";
