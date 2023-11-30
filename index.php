@@ -1,26 +1,52 @@
 <?php
+/*
 
-$asientos_disponibles = 4;
-$es_hijo_de_tom_holland = true;
+el problema del switch es que es polemico por que permite el codigo espagueti
 
-if($asientos_disponibles > 0) {
-    echo "Puedes ver la pelicula de Spidey";
+pero cuando debemos usar switch?
+
+usalo cuando:
+
+1. necesites decidir entre un caso u otro 
+
+2. quieras una forma fecil de plantear diversas situaciones
+
+3. usarlo no signifique sacrificar la legibilidad de tu codigo
+
+no lo uses cuando:
+
+1. necesites hacer comparaciones complejas
+
+2. quieras verificar un rango de numeros
+
+3. necesites poner grandes bloques de codigo y/o tu codigo se vuelva ilegible
+
+*/
+
+
+//michi 1: 9
+//michi 2 : 4
+//michi 3 : 3
+//michi 4: 9
+//michi 5: 1
+
+$michi = 4;
+
+switch($michi) {
+    case 1:
+    case 4:
+        echo "Su numero favorito es el 9";
+        break;
+    case 2:
+        echo "Su numero favorito es el 4";
+        break;
+    case 3:
+        echo "Su numero favorito es el 3";
+        break;
+    case 5:
+        echo "Su numero favorito es el 1";
+        break;
+    default:
+        echo "Ese michi no existre :c";
 }
-else if($es_hijo_de_tom_holland == true) {
-    echo "No te creo, pero puedes ver la pelicula";
-}
-else {
-    echo "Lo sentimos, te tocara spoilearte";
-}
 
-echo "\n";
-
-if($asientos_disponibles < 0)
-    echo "Puedes ver la pelicula de Spidey";
-else if($es_hijo_de_tom_holland) // como el if acepta solo booleanos podemos quitar el == true
-    echo "No te creo, pero puedes ver la pelicula";
-else
-    echo "Lo sentimos, te tocara spoilearte";
-#tambien podemos quitar las llaves {} del if y else solo si esta tiene una sola linea de codigo
-
-echo "\n";
