@@ -1,12 +1,26 @@
 <?php
 
-$usernames = ["Pepito123", "MrMichi", "RetaxMain"];
+/*for(;;) {
+    //escribir todo nuestro codigo
+    echo "algo";
+} // si dejamos el ciclo de esta manera sera un ciclo infinito*/
 
-do {
-    $username = readline("Por favor, ingresa tu nuevo nombre de usuario: ");
-    #echo "Esto se ejecuta por lo menos una vez";
-
-    echo "\n";
-} while(in_array($username, $usernames)); //in_array nos permite saber si esta o no esta dentro de un array, el primer valor que pasemos como parametro es el valor que queremos buscar y el segundo es el array, true si esta el valor y false si no
+for($contador = 0; $contador < 10; $contador++) {
+    //escribir todo nuestro codigo
+    echo $contador . "\n";
+}
 
 echo "\n";
+
+
+for($contador = 10; $contador > 0; $contador--) {
+    //escribir todo nuestro codigo
+    echo $contador . "\n";
+}
+
+echo "\n";
+
+
+for($i = 0, $j = 0; $i < 10; $i++, $j+=2) { // como vemos aqui mismo en el ciclo for podemos definir dos variables e incrementar las dos variables ya sean igual incremento y de distinta forma
+    echo "i = $i j = $j" . "\n";
+}
