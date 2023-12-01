@@ -1,26 +1,39 @@
 <?php
 
-/*for(;;) {
-    //escribir todo nuestro codigo
-    echo "algo";
-} // si dejamos el ciclo de esta manera sera un ciclo infinito*/
+/*
+// el iterable es el array y valor seria el valor
+foreach($iterable as $valor) {
 
-for($contador = 0; $contador < 10; $contador++) {
-    //escribir todo nuestro codigo
-    echo $contador . "\n";
+}
+
+// hay otra forma que es para obtener la llave del array de un arreglo asociativo o subindice
+foraeach($iterable as $llave => $valor) {
+
+}
+*/
+
+$tiendita_de_cafes = array (
+    "Americano" => 20,
+    "Latte" => 25,
+    "Capuccino" => 27.5,
+    "Mocca" => 24,
+);
+
+foreach($tiendita_de_cafes as $price) {
+    echo "El café en cuestión cuesta $$price USD \n";
 }
 
 echo "\n";
 
-
-for($contador = 10; $contador > 0; $contador--) {
-    //escribir todo nuestro codigo
-    echo $contador . "\n";
+foreach($tiendita_de_cafes as $subindice => $price) {
+    echo "El café $subindice cuesta $$price USD \n";
 }
 
 echo "\n";
 
+//asi como el if si tenemos solo una linea de codigo podemos omitir las llaves {}, pero si tenemos mas de una linea toca usar las llaves
 
-for($i = 0, $j = 0; $i < 10; $i++, $j+=2) { // como vemos aqui mismo en el ciclo for podemos definir dos variables e incrementar las dos variables ya sean igual incremento y de distinta forma
-    echo "i = $i j = $j" . "\n";
-}
+foreach($tiendita_de_cafes as $subindice => $price)
+    echo "El café $subindice cuesta $$price USD \n";
+
+echo "\n";
