@@ -1,23 +1,27 @@
 <?php
 
-$valorAnterior = 0;
-$valorInicial = 1;
+function get_pokemon() {
 
-$casaARecorrer = readline("Digite la casa a la cual se va a dirigir: ");
+    $numero_aleatorio = rand(1, 5); // el metodo rand sirve para generar un numero aleatorio. se puede agregar dos parametros el primero seria el minimo numero aleatorio y el segundo el maximo numero aleatorio
 
-if($casaARecorrer == 1) {
-    echo "la casa numero $casaARecorrer tiene ". 0 . " caminos diferentes para llegar a ella \n";
-    exit;
+    switch ($numero_aleatorio) {
+        case 1: 
+            echo "Pikachu";
+            break;
+        case 2: 
+            echo "Charmander";
+            break;
+        case 3:
+            echo "Mewtwo";
+            break;
+        default:
+            echo "Lo siento, no hay pokemon para ti :C";
+    }
+    echo "\n";
 }
 
-for($i = 2; $i <= $casaARecorrer; $i++) {
-
-    $resultado = $valorAnterior + $valorInicial;
-    $valorAnterior = $valorInicial;
-    $valorInicial = $resultado;
-
+for($i = 0; $i< 4; $i++) {
+    get_pokemon();
 }
 
-
-echo "la casa numero $casaARecorrer tiene ". $resultado . " caminos diferentes para llegar a ella \n";
-
+echo "\n";
