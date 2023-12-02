@@ -1,37 +1,23 @@
 <?php
 
-// en todos los ciclos existen la palabra reservada break y continue
-// break: lo que hace break es romper el ciclo, apenas el toque la palabra break lo que hace el ciclo es destruirse y ya no continua o sea el ciclo se rompe
-//continue: el continue lo que hace es saltar al siguiente ciclo es decir no importa si el bloque de codigo no se a terminado de ejecutar cuando encuentra un continue, simplemente se salta al siguiente ciclo 
+$valorAnterior = 0;
+$valorInicial = 1;
 
-$tiendita_de_cafes = array (
-    "Americano" => 20,
-    "Latte" => 25,
-    "Recalentado" => 10,
-    "Capuccino" => 27.5,
-    "Mocca" => 24,
-);
+$casaARecorrer = readline("Digite la casa a la cual se va a dirigir: ");
 
-foreach($tiendita_de_cafes as $cafe => $price) {
-    echo "Actualmente encontre al café $cafe \n";
-    if($cafe === "Latte") {
-        echo "!Encontramos a Latte! \n";
-        break; // quibra el ciclo hasta que encuentre latte
-    }
+if($casaARecorrer == 1) {
+    echo "la casa numero $casaARecorrer tiene ". 0 . " caminos diferentes para llegar a ella \n";
+    exit;
 }
 
-echo "\n";
+for($i = 2; $i <= $casaARecorrer; $i++) {
 
-foreach($tiendita_de_cafes as $cafe => $price) {
-    
-    if($cafe === "Recalentado") {
-        continue; // el continue apenas encontremos el cafe recalentado saltarse al siguiente ciclo o iteracion y no va a imprimir o ejecutar lo que esta despues
-    }
+    $resultado = $valorAnterior + $valorInicial;
+    $valorAnterior = $valorInicial;
+    $valorInicial = $resultado;
 
-    echo "El café $cafe es muy rico \n";
 }
 
-echo "\n";
 
-
+echo "la casa numero $casaARecorrer tiene ". $resultado . " caminos diferentes para llegar a ella \n";
 
