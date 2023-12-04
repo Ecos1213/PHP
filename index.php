@@ -1,27 +1,19 @@
 <?php
 
-function get_pokemon() {
-
-    $numero_aleatorio = rand(1, 5); // el metodo rand sirve para generar un numero aleatorio. se puede agregar dos parametros el primero seria el minimo numero aleatorio y el segundo el maximo numero aleatorio
-
-    switch ($numero_aleatorio) {
-        case 1: 
-            echo "Pikachu";
-            break;
-        case 2: 
-            echo "Charmander";
-            break;
-        case 3:
-            echo "Mewtwo";
-            break;
-        default:
-            echo "Lo siento, no hay pokemon para ti :C";
+function es_estudiante_legend($platzi_rank) {
+    if($platzi_rank >= 20000) {
+        echo "Eres un estudiante legend";
+    }else {
+        echo "Lo sentimos, aun no alcanzas el nivel legend";
     }
+}
+
+do {
+    $platzi_rank_user = (int) readline("Por favor, dinos cual es tu Platzi Rank: "); // como readline nos da un string y php es completamente inteligente y lo convierte en un int cuando se usa dentro de la funcion pero para estar seguros usamos igual el casteo por seguridad
+
+    es_estudiante_legend($platzi_rank_user);
+
     echo "\n";
-}
+}while(true);
 
-for($i = 0; $i< 4; $i++) {
-    get_pokemon();
-}
 
-echo "\n";
