@@ -8,7 +8,8 @@
  * $_REQUEST se utiliza para recoger estos datos y hacerlos accesibles en el script PHP.
  */
     print_r($_REQUEST); // puedes acceder al valor del campo Nombre como un array osea asi: $_REQUEST["Nombre"]; y asi podemos tomar el valor que se envia desde el formulario html
-
+    // print_r se utiliza principalmente para imprimir estructuras de datos legibles para humanos, como arrays.
+    // var_dump es más detallado y muestra información adicional sobre la variable, como el tipo de datos y el tamaño de la variable.
 /**
  * Es importante tener en cuenta que el uso de $_REQUEST puede ser menos seguro que acceder directamente a $_POST o $_GET según el contexto de la aplicación. 
  * Esto se debe a que $_REQUEST incluye datos de cookies, y en algunas situaciones podría ser más seguro y específico utilizar 
