@@ -1,20 +1,71 @@
 <?php
-/**
- * $_REQUEST es una variable global en PHP que se utiliza para recopilar datos de formularios HTML. 
- * Puede recopilar datos de formularios enviados tanto con el método HTTP POST como con el método HTTP GET. 
- * En otras palabras, $_REQUEST contiene datos de variables superglobales $_GET, $_POST y $_COOKIE.
- * 
- * Cuando se envía un formulario HTML con el método POST o GET, los datos del formulario se envían al script PHP del lado del servidor. 
- * $_REQUEST se utiliza para recoger estos datos y hacerlos accesibles en el script PHP.
- */
-    print_r($_REQUEST); // puedes acceder al valor del campo Nombre como un array osea asi: $_REQUEST["Nombre"]; y asi podemos tomar el valor que se envia desde el formulario html
-    // print_r se utiliza principalmente para imprimir estructuras de datos legibles para humanos, como arrays.
-    // var_dump es más detallado y muestra información adicional sobre la variable, como el tipo de datos y el tamaño de la variable.
-/**
- * Es importante tener en cuenta que el uso de $_REQUEST puede ser menos seguro que acceder directamente a $_POST o $_GET según el contexto de la aplicación. 
- * Esto se debe a que $_REQUEST incluye datos de cookies, y en algunas situaciones podría ser más seguro y específico utilizar 
- * $_POST o $_GET según el método de envío del formulario. Además, el uso adecuado de funciones como htmlspecialchars o mysqli_real_escape_string
- * es crucial para evitar problemas de seguridad como la inyección de código.
- */
+ /**
+  * PHP es un lenguaje con el cual podrás llevar a cabo todo tipo de proyectos y además desarrollar una excelente lógica de programación de forma muy sencilla.
+  * Como siempre, la documentación será tu mejor amiga para encontrar cómo y por qué funciona cada parte del lenguaje para que tú te ocupes de desarrollar las mejores soluciones con código.
+  *
+  * Ahora te reto a resolver estos ejercicios donde pondrás en práctica los conocimientos más simples haciendo uso de tu lógica y por supuesto, de PHP.
+  *
+  * ¡No olvides poner tus soluciones en la sección de aportes!
+  *
+  * Con una condición…
+  * En una escuela están almacenando los juguetes favoritos de los estudiantes de acuerdo a su edad en un lugar específico de la bodega de esta forma:
+  * 
+  * Quienes sean menores de 5 años tendrán sus espacios en la parte inferior de la bodega.
+  * Quienes tengan entre 5 y 7 años tendrán sus espacios en la parte media de la bodega.
+  * Quienes tengan más de 7 años tendrán sus espacios en la parte alta de la bodega.
+  * Quienes no tengan registro de su edad aún tendrán un espacio de almacenamiento en la bodega de al lado.
+  * Según una lista que contiene las edades de cada estudiante debes validar su edad y mostrar a través de un mensaje en dónde tendrán que almacenar sus juguetes.
+  *
+  * Por ejemplo:
+  *
+  * El estudiante con 4 años tendrá sus juguetes en la parte inferior de la bodega.
+  * El estudiante con 6 años tendrá sus juguetes en la parte media de la bodega.
+  * En estudiante con 10 años tendrá sus juguetes en la parte alta de la bodega.
+  * Medio árbol de Navidad
+  * Dibuja medio árbol de Navidad usando solo asteriscos como se indica en el siguiente ejemplo:
+  
+  *
+  **
+  ***
+  ****
+  *****
+  * La altura de este árbol debe ser dinámica, si le dices que tendrá 10 de alto, entonces tendrá 10 asteriscos.
+  *
+  * Tip: Usa un ciclo para realizar esta actividad.
+  *
+  * ¡Nos vemos en la siguiente clase para empezar con nuestro proyecto!
+  */
+
+  function almacenandoPorEdad($edad = null) {
+    if($edad < 5 && !empty($edad)) {
+        echo "El estudiante con $edad años tendra sus juguetes en la parte inferior de la bodega. \n";
+    }else if($edad > 5 && $edad < 7) {
+        echo "El estudiante con $edad años tendra sus juguetes en la parte media de la bodega. \n";
+    }else if($edad > 7) {
+        echo "El estudiante con $edad años tendra sus juguetes en la parte alta de la bodega. \n";
+    }else {
+        echo "El estudiante tendra sus juguetes en la bodega de al lado. \n";
+    }
+  }
+
+  function arbolDeNavidad($tamañoDePisos = 1) {
+    $asterisco = "";
+    for($i = 0; $i < $tamañoDePisos; $i++) {
+        $asterisco .= "*";
+        echo $asterisco;
+        echo "\n";
+
+    }
+  }
+
+
+  almacenandoPorEdad(4);
+  almacenandoPorEdad(6);
+  almacenandoPorEdad(10);
+  almacenandoPorEdad();
+
+  arbolDeNavidad(5);
+
+
 ?>
 
