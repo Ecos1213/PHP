@@ -1,56 +1,31 @@
 <?php
 
-$valorA = 5;
+$nombre = "Camila";
+$apellido = "Rojas";
 
-if($valorA == 10) {
-    echo "Es igual a 10 \n";
-}else {
-    echo "No es igual a 10 \n";
+function concatenar($nombre, $apellido) {
+    echo "$nombre $apellido";
 }
 
-$i = 0;
+concatenar("Camila", "Rojas");
 
-while($i <= 10) { // por cada iteracion ejecutara el codico esto se le llama ciclo
-    echo $i++;
+function sumNumbers($numeros) {
+    $suma = 0;
+
+    for($i=0; $i<4; $i++) {
+        $suma += $numeros[$i];
+    }
+
+    echo "\nLa suma de los valores del array es: $suma\n";
 }
 
-echo "\n";
+$numeros = array(1,2,3,4);
+sumNumbers($numeros);
 
-$i = 0;
-do { // primero ejecuta la linea de codigo y despues hace la iteracion de cada ciclo
-    echo $i++;
-}while($i <= 10);
+$nombres = array("Ana", "Juan", "Camila");
+var_dump(is_array($nombres)); // is_array valida si la variable es un array, si es un array retornara un true y si no es un array retornara false
 
-echo "\n";
 
-$arr = array(1,2,3,4);
-for($i=0; $i<4; $i++) {
-    echo $arr[$i];
-}
-
-echo "\n";
-
-foreach($arr as $value) {
-    echo $value;
-}
-
-echo "\n";
-
-switch($valorA) {
-    case 1:
-        echo "El valor es 1";
-        break;
-    case 2:
-        echo "El valor es 2";
-        break;
-    case 3:
-        echo "El valor es 3";
-        break;
-    default:
-        echo "No es ninguno de los valores 1, 2 o 3";
-        break;
-}
-echo "\n";
 
 ?>
 
